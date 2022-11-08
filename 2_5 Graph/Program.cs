@@ -1,4 +1,4 @@
-﻿
+
 namespace Graph
 {
     class Program
@@ -14,6 +14,11 @@ namespace Graph
             graph1.AddEdge("A", "B");
             graph1.AddEdge("A", "C");
             graph1.AddEdge("A", "D");
+
+            Console.WriteLine(graph1);
+            Console.WriteLine("");
+
+
             graph1.RemoveEdge("A", "C");
             graph1.RemoveEdge("A", "E"); // no E !
             graph1.RemoveNode("B");
@@ -35,13 +40,13 @@ namespace Graph
             graph2.AddEdge("A", "B");
             graph2.AddEdge("A", "E");
             graph2.AddEdge("B", "D");
-            graph2.AddEdge("B", "H");
+            //graph2.AddEdge("B", "H"); //error
             graph2.AddEdge("B", "C");
             graph2.AddEdge("C", "D");
             Console.WriteLine("TraverseDepthFirsy recursion");
             graph2.TraverseDepthFirst_recursion("A"); // A B C D E
             graph2.TraverseDepthFirst_recursion("C"); // C D
-            graph2.TraverseDepthFirst_recursion("G"); // 
+            //graph2.TraverseDepthFirst_recursion("G"); // error
             Console.WriteLine();
             Console.WriteLine("TraverseDepthFirsy");
             graph2.TraverseDepthFirst("A"); // A E B C D
@@ -61,7 +66,7 @@ namespace Graph
             graph.AddEdge("A", "P");
             graph.AddEdge("B", "P");
             var list = graph.TopologicalSort();
-            Console.WriteLine(String.Join(", ", list));
+            Console.WriteLine(String.Join(", ", list)); //X, B, A, P
 
         }
     }
